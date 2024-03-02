@@ -1,45 +1,52 @@
 
 #container {
   width: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-  'header header header'
-  'items recipe addItems';
-  gap: 5px;
+  padding: 0;
+  height: 100vh;
+  overflow: auto;
 }
 
 
-h1 {
-  color: rgb(0, 255, 8);
+#title {
+  color: rgb(255, 255, 255);
   display: flex;
+  font-size: 6.5vw;
   justify-content: center;
   text-align: center;
+  margin:0;
+  padding: 0 1.5rem;
+  text-shadow: 
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+  -1px  1px 0 #000,
+   1px  1px 0 #000;
   
 }
 
 
 
 Header {
-  grid-area: header;
-  border: 3px solid green;
+  background-image: url('../assets/banner-3-1920w.webp');
+  background-size: cover;
+  background-position: center; 
+  height: 120px;
 }
 
 #items {
-  grid-area: items;
-  border: 3px solid blue;
+  display: flex;
+  justify-content: space-evenly;
   min-width: 100px;
   text-align: center;
+  
 }
 
 #addItemForm {
-  grid-area: addItems;
+  max-width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 3px solid red;
   padding: 10PX;
+  
 }
 
 .formInput {
@@ -48,7 +55,7 @@ Header {
 }
 
 #quantity {
-  width: 2rem;
+  width: 5rem;
   margin: 10px
 }
 
@@ -65,5 +72,25 @@ Header {
 #submit {
   width: 30%;
   padding: 5px;
+  color: green;
 }
 
+#itemList {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.item p {
+  margin-right: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+  #title {
+    font-size: 10vw;
+  }
+}
